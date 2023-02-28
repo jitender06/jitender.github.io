@@ -1,0 +1,253 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* for font sizes we use rem units and for margin and padding we use em */
+
+body{
+    /* 1em = 16px  */
+    margin: 1.5em;
+    font-family: 'Poppins', sans-serif;
+    /* box-sizing: border-box;
+    overflow: hidden; */
+}
+
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+.hero-img{
+    background-image:url(../images/revolt-164_6wVEHfI-unsplash.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    animation: introload 2s forwards;
+    /* overflow: hidden; */
+}
+
+.logo{
+    color: white;
+    font-weight: bold
+}
+header{
+    display: flex;
+    justify-content: space-between;
+  
+
+}
+header svg{
+    width: 2.5em;
+    margin-top: 0.4em;
+    cursor: pointer;
+}
+section.hero{
+    color:white;
+    height: 85vh;
+    animation: moveDown 1s ease-in-out forwards;
+    opacity: 0;
+}
+section.hero svg{
+    stroke: white;
+    position: absolute;
+    bottom: 4em;
+    width: 1em;
+    animation: moveArrow 1s alternate-reverse infinite;
+    
+}
+section.hero svg path{
+    fill: white;
+}
+section.hero h1{
+    font-size: 2.9rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+}
+.sub-head{
+    font-size: 1.3rem;  
+}
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: white;
+    width: 50%;
+    z-index: 2222;
+    transform: translate(100%);
+    transition: transform .5s ease-in-out;
+}
+nav ul{
+    padding: 0;
+    margin-top: 8em;
+}
+nav ul li a{
+    color: black;
+    padding: 0.75em 2em;
+    display: block;
+}
+nav ul li a:hover{
+    background-color: rgb(224, 218, 218);
+}
+nav .close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2em;
+}
+
+/* /////more info section */
+
+.more-info img{
+    width: 100%;
+    object-fit: cover;
+    height: 12em;
+}
+.more-info .title{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.more-info .desc{
+    line-height: 1.5rem;
+}
+
+.open-nav{
+    transform: translateX(0%);
+}
+
+
+@media only screen and (min-width: 680px){
+    body{
+        /* 1em = 16px  */
+        margin:1.5em 5em;
+    }
+
+}
+@media only screen and (min-width: 920px)
+{
+
+    .menu{
+        display: none;
+    }
+    nav{
+        transform: translate(0%);
+        position: unset;
+        height: auto;
+        background: none;
+
+    }
+    nav ul{
+        display: flex;
+        /* justify-content: space-around; */
+        margin: 0;
+    }
+    nav ul li a{
+        color: white;
+        padding: unset;
+        padding: .5em 1.5em;
+        font-size: .9rem;
+    }
+    nav ul li a:hover{
+        background: none;
+        text-decoration: underline;
+    }
+    .close{
+        display: none;
+    }
+    .hero-img{
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+    .logo{
+        color: black;
+    }
+    .logo span{
+        color:red;
+    }
+    section.hero{
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+    }
+    section.hero svg{
+        stroke: black;
+        position: unset;
+    }
+    section.hero svg path{
+        fill: black;
+    }
+    .feature{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 8em;
+    }
+    section.more-info .feature img{
+        width: 25em;
+    }
+    section.more-info .feature .content{
+        text-align: right;
+        width: 25em;
+    }
+
+    section.more-info .left{
+        grid-template-areas: "left right";
+    }
+    section.more-info .left img{
+        grid-area: left;
+    }
+    section.more-info .left .content{
+        text-align: left;
+        width: 25em;
+        justify-self:left;
+    }
+
+}
+
+@media only screen and (min-width: 1200px){
+
+    .wrapper{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    section.more-info .feature{
+        gap: 0;
+    }
+
+}
+@keyframes introload{
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(0%);
+    }
+}
+
+@keyframes moveArrow{
+    from{
+        transform:translateY(-18px);
+    }
+    to{
+        transform:translateY(0px);
+    }
+}
+@keyframes moveDown{
+    from{
+        transform: translateY(-100px);    
+    }
+    to{
+        transform: translateY(0); 
+        opacity: 1;   
+    }
+    }
